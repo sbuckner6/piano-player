@@ -15,8 +15,9 @@
 2. Ensure you have Python 3 installed
 3. In the root project directory, run `python3 -m venv piano-player-env`
 4. Run `source venv/bin/activate` (or `piano-player-env\Scripts\activate.bat` if you are on Windows)
-5. Run `cd app`
-6. Run `python main.py`
-7. Navigate to http://localhost:5000
-8. Click the piano
-9. If you don't hear anything or get an error, just refresh
+5. Run `pip install -r requirements.txt`
+6. Run `cd app`
+7. Run `python main.py`
+8. Navigate to http://localhost:5000
+9. Click the piano
+10. If you don't hear anything or get an error, just refresh
