@@ -1,10 +1,10 @@
 # piano-player
 
-**Overview**
+## Overview
 
 A procedural music generator created in Python that arranges and plays classical, blues, waltz, and 12-tone pieces using the Fibonacci sequence.
 
-**Docker Instructions**
+## Docker Instructions
 
 1. Install Docker: https://docs.docker.com/get-docker/
 2. In the root project directory, run `docker image build -t piano-player .`
@@ -13,7 +13,7 @@ A procedural music generator created in Python that arranges and plays classical
 5. Click the piano
 6. If you don't hear anything or get an error, just refresh
 
-**Non-Docker Instructions**
+## Non-Docker Instructions
 
 1. Install `ffmpeg`, `portaudio19-dev`, and `timidity` (e.g. via `apt` or `brew`, if you are on Windows, you may have to download the binaries and add them to your environment variables)
 2. Ensure you have Python 3 installed
