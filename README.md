@@ -1,4 +1,4 @@
-# piano-player
+# Piano Player
 
 ## Overview
 
@@ -11,7 +11,7 @@ A procedural music generator created in Python that arranges and plays classical
 3. Run `docker run -d -p 5000:5000 piano-player`
 4. Navigate to http://localhost:5000
 5. Click the piano
-6. If you don't hear anything or get an error, just refresh
+6. If you don't hear anything or get an error, just refresh (I'm still investigating this bug)
 
 ## Non-Docker Instructions
 
@@ -24,4 +24,4 @@ A procedural music generator created in Python that arranges and plays classical
 7. Run `python main.py`
 8. Navigate to http://localhost:5000
 9. Click the piano
-10. If you don't hear anything or get an error, just refresh
+10. If you don't hear anything or get an error, just refresh (I'm still investigating this bug)
