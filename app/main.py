@@ -21,9 +21,9 @@ def favicon():
 @app.route('/audio')
 def audio():
     r = randint(1, 100)
-    midi_file = f"/build/app/out{r}.mid" if is_docker else f"output/out{r}.mid"
+    midi_file = f"/build/app/output/out{r}.mid" if is_docker else f"output/out{r}.mid"
     compose_midi(midi_file)
-    mp3_file = f"/build/app/out{r}.mp3" if is_docker else f"output/out{r}.mp3"
+    mp3_file = f"/build/app/output/out{r}.mp3" if is_docker else f"output/out{r}.mp3"
     render_audio(midi_file, mp3_file)
     return send_file(mp3_file, mimetype='audio/mpeg')
 
