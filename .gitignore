@@ -1,4 +1,7 @@
 *.mp3
 *.midi
+*.mid
+*.wav
+*.flac
 .DS_Store
 .idea/
