@@ -1,6 +1,6 @@
 # piano-player
 
-*Docker Instructions*
+**Docker Instructions**
 
 1. Install Docker: https://docs.docker.com/get-docker/
 2. In the root project directory, run `docker image build -t piano-player .`
@@ -9,6 +9,6 @@
 5. Click the piano
 6. If you don't hear anything or get an error, just refresh
 
-*Non-Docker Instructions*
+**Non-Docker Instructions**
 
 Very complicated right now. Will simplify later.
