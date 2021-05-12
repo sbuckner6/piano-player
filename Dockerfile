@@ -19,4 +19,4 @@ COPY . /build
 
 ENTRYPOINT [ "python3.6" ]
 
-CMD [ "app/main.py" ]
+CMD [ "app/main.py", "-d" ]

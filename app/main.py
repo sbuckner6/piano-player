@@ -2,10 +2,10 @@ from flask import Flask, render_template, Response, url_for, send_file, send_fro
 from music.compose import compose_midi
 from audio.audio import render_audio
 from random import randint
-import os
+import os, sys
 
 app = Flask(__name__)
-
+is_docker = False
 
 @app.route('/')
 def index():
@@ -21,9 +21,9 @@ def favicon():
 @app.route('/audio')
 def audio():
     r = randint(1, 100)
-    midi_file = f"/build/app/out{r}.mid"
+    midi_file = f"/build/app/out{r}.mid" if is_docker else f"output/out{r}.mid"
     compose_midi(midi_file)
-    mp3_file = f"/build/app/out{r}.mp3"
+    mp3_file = f"/build/app/out{r}.mp3" if is_docker else f"output/out{r}.mp3"
     render_audio(midi_file, mp3_file)
     return send_file(mp3_file, mimetype='audio/mpeg')
 
@@ -38,5 +38,6 @@ def add_header(r):
 
 
 if __name__ == '__main__':
+    is_docker = len(sys.argv) > 1 and sys.argv[1] == '-d'
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
