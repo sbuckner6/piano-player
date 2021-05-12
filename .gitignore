@@ -5,5 +5,4 @@
 *.flac
 .DS_Store
 .idea/
-output/*
 venv
