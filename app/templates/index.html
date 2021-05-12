@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Piano Playing Robot</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="stylesheet" href="{{
+            url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        <h1>Piano Playing Robot</h1>
+        <h3 id="message">Click the piano to hear it play!</h3>
+        <a onclick="compose_initial()">
+            <img class="piano" src="{{
+                url_for('static', filename='img/piano.jpeg') }}">
+        </a>
+        <div id="player"></div>
+        <script>
+             var started = false;
+
+             function compose_initial() {
+                if (!started) {
+                    started = true;
+                    compose();
+                }
+            }
+
+            function compose() {
+                var src = "{{url_for('audio')}}?cb=" + new Date().getTime();
+                var inner = "<audio src='" + src + "' id='audio' type='audio/mpeg' onended='compose()'>"
+                var audio = document.getElementById('audio');
+                if (audio) {
+                    audio.parentNode.removeChild(audio);
+                }
+                document.getElementById('player').innerHTML = inner;
+                audio = document.getElementById('audio');
+                var message = document.getElementById('message');
+                message.innerHTML = 'Loading...';
+                try {
+                    audio.load();
+                } catch(err) {
+                    return compose();
+                }
+                message.innerHTML = '';
+                audio.play();
+            }
+        </script>
+    </body>
+</html>
