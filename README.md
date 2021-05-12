@@ -1,5 +1,9 @@
 # piano-player
 
+**Overview**
+
+A procedural music generator created in Python that arranges and plays classical, blues, waltz, and 12-tone pieces using the Fibonacci sequence.
+
 **Docker Instructions**
 
 1. Install Docker: https://docs.docker.com/get-docker/
